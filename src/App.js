@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Chart } from 'chart.js/auto';
-import Papa from "papaparse";
 import _ from 'lodash';
+import Papa from "papaparse";
 
-function Histogram() {
+function App() {
     const [histogramData, setHistogramData] = useState([]);
 
     const fetchHistogramData = async () => {
@@ -52,14 +52,7 @@ function Histogram() {
   };
 
 
-    const s2ab = (s) => {
-        const buf = new ArrayBuffer(s.length);
-        const view = new Uint8Array(buf);
-        for (let i = 0; i < 20; i++) {
-            view[i] = s.charCodeAt(i) & 0xff;
-        }
-        return buf;
-    };
+    
 
     return (
         <div>
@@ -72,4 +65,4 @@ function Histogram() {
     );
 }
 
-export default Histogram;
+export default App;
